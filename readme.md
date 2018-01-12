@@ -1,4 +1,4 @@
-### Python
+### Introduction to Computer Science and Programming Using Python
 
 - Thanks, Ericgrimson
 
@@ -21,5 +21,8 @@
   - selection sort
   - merge sort
 - O(1), O(n), O(log n), O(n^2), O(2^n)
+- Visualization of data
+  - pylab, plots, labels
+  - comparing plots, display details
 
-
+- Course 6.00.1x / 6.00.2x
