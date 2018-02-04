@@ -1,6 +1,6 @@
 ### Introduction to Computer Science and Programming Using Python
 
-- Thanks, Ericgrimson
+- Thanks, Professor Eric Grimson
 
 - if
 - while, for, range, print str,

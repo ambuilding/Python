@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 18 08:10:59 2016
-
-@author: ericgrimson
-"""
-
 class MITPerson(Person):
     nextIdNum = 0 # next ID number to assign
 
@@ -20,10 +13,10 @@ class MITPerson(Person):
     # sorting MIT people uses their ID number, not name!
     def __lt__(self, other):
         return self.idNum < other.idNum
-        
+
     def speak(self, utterance):
         return (self.getLastName() + " says: " + utterance)
-        
+
 
 # example usage
 
@@ -41,7 +34,7 @@ MITPersonList = [m1, m2, m3]
 
 for e in MITPersonList:
     print(e)
-    
+
 MITPersonList.sort()
 
 print()
@@ -60,4 +53,4 @@ p4 = Person('John')
 
 #p4<p1
 
-   
+
