@@ -92,5 +92,3 @@ np.sum?
 - 3.1how to translate DNA
 - how to process texts
 - how to classify items using the k-nearest neighbors method
-
-
