@@ -92,3 +92,11 @@ np.sum?
 - 3.1how to translate DNA
 - how to process texts
 - how to classify items using the k-nearest neighbors method
+
+
+## Week 4:
+
+- classify whisky
+- use GPS data to track the migration patterns of birds
+- analyze social networks
+- axis 0 is rows, axis equal to 1 is columns.
