@@ -79,3 +79,19 @@ for real world social networks
   - but only sparsely connected nodes outside of that group.
   - Finding network communities is a very interesting and timely problem.
 
+
+### Network homophily
+- It occurs when nodes that share an edge share a characteristic
+  - more often than nodes that do not share an edge.
+
+#### Investigate homophily of several characteristics of individuals connected in social networks in rural India.
+- calculate the chance homophily for an arbitrary characteristic.
+  - dict / characteristics : the frequency of their occurrence
+  - the frequency of a squared and sum
+- Homophily is the proportion of edges in the network whose constituent nodes share that characteristic.
+
+- calculate and compare the actual homophily in these village to chance.
+- subset the data into individual villages and store them.
+- define a few dictionaries that enable us to look up
+  - the sex, caste, and religion of members of each village by personal ID.
+- create a function that computes the observed homophily given a village and characteristic.
