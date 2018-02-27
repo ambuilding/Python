@@ -69,3 +69,24 @@
     - it emulates a browser.
     - It pretends it's a browser and it can get the data back.
     - It's also useful sometimes when a web server detects that you're coming from a program and blocks you.
+
+#### Log into a web server
+- logging in actually involves sending data (username and password) to the server.
+- it requires filling in a form and sending the form data to the server.
+- Hidden means that we don't see it on the page, but it is there.
+- find all the inputs on the page and figure out what values need to go back, whether you're entering that value or not.
+- login token,
+  - it sends this value each time we open the page.
+  - every time we refresh the page, we get a different token value
+  - a kind of security, make sure that the page that you're logging in from is a page that they gave you, not a page that you created yourself.
+
+
+
+- deal with JSON data and XML data
+- send HTTP requests and deal with the response that we get back
+- BeaurifulSoup
+- If there is JavaScript on the page, Selenium
+
+- `https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page`
+  - `&returntoquery=gettingStartedReturn%3Dtrue`
+- `https://en.wikipedia.org/w/index.php?title=Main_Page&gettingStartedReturn=true`
