@@ -71,6 +71,8 @@
 
 #####Classes
 - Unit testing
+  - Instead of waiting until the entire game is ready, you should test each function you write, individually, before moving on.
+  - This approach is known as unit testing, and it will help you debug your code.
 - Regression testing
 - Integration testing
 
@@ -100,9 +102,22 @@
 - try else exception finally
 - assert
 
+### PS4
+- Word scores
+  - calculate the score for a single word.
+- Dealing with Hands
+  - A hand is the set of letters held by a player during the game.
+- Valid Words
+  - At this point, we have written code to generate a random hand and display that hand to the user.
+  - We can also ask the user for a word (Python's input) and score the word (using your getWordScore).
+  - Now, verify that a word given by a player obeys the rules of the game.
+- Playing a hand: Allows the user to play the given hand, print the total score.
+- Playing a game: A game consists of playing multiple hands `playGame`.
+  - Allow the user to play an arbitrary number of hands.
+  - implement one final function to complete our word-game program.
 
-
-
+- Computer Choosing a Word and Playing a Hand
+  -
 
 - Searching and sorting algorithms
   - linear search
