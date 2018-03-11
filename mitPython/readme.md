@@ -102,7 +102,8 @@
 - try else exception finally
 - assert
 
-### PS4
+### PS4, word game
+
 - Word scores
   - calculate the score for a single word.
 - Dealing with Hands
@@ -114,10 +115,10 @@
 - Playing a hand: Allows the user to play the given hand, print the total score.
 - Playing a game: A game consists of playing multiple hands `playGame`.
   - Allow the user to play an arbitrary number of hands.
-  - implement one final function to complete our word-game program.
+  - implement one final function to complete the word-game program.
 
-- Computer Choosing a Word and Playing a Hand
-  -
+- Give the computer the option to play, choose a Word, Play a Hand
+
 
 - Searching and sorting algorithms
   - linear search

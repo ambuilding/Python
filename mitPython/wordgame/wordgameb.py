@@ -1,6 +1,5 @@
-from ps4a import *
+from wordgamea import *
 import time
-
 
 #
 #
@@ -23,23 +22,40 @@ def compChooseWord(hand, wordList, n):
 
     returns: string or None
     """
-    # Create a new variable to store the maximum score seen so far (initially 0)
-    bestScore = 0
-    # Create a new variable to store the best word seen so far (initially None)  
-    bestWord = None
-    # For each word in the wordList
+    wordScore = {}
     for word in wordList:
-        # If you can construct the word from your hand
-        if isValidWord(word, hand, wordList):
-            # find out how much making that word is worth
-            score = getWordScore(word, n)
-            # If the score for that word is higher than your best score
+        wordScore[word] = getWordScore(word, n)
+        
+    bestScore = 0
+    bestWord = None
+    
+    for key in wordScore:
+        if isValidWord(key, hand, wordList):
+            score = wordScore[key]
             if (score > bestScore):
                 # update your best score, and best word accordingly
                 bestScore = score
-                bestWord = word
+                bestWord = key
     # return the best word you found.
     return bestWord
+        
+#    # Create a new variable to store the maximum score seen so far (initially 0)
+#    bestScore = 0
+#    # Create a new variable to store the best word seen so far (initially None)  
+#    bestWord = None
+#    # For each word in the wordList
+#    for word in wordList:
+#        # If you can construct the word from your hand
+#        if isValidWord(word, hand, wordList):
+#            # find out how much making that word is worth
+#            score = getWordScore(word, n)
+#            # If the score for that word is higher than your best score
+#            if (score > bestScore):
+#                # update your best score, and best word accordingly
+#                bestScore = score
+#                bestWord = word
+#    # return the best word you found.
+#    return bestWord
 
 #
 # Computer plays a hand
@@ -99,7 +115,7 @@ def compPlayHand(hand, wordList, n):
 #
 # Problem #6: Playing a game
 #
-#
+#    
 def playGame(wordList):
     """
     Allow the user to play an arbitrary number of hands.
@@ -123,9 +139,33 @@ def playGame(wordList):
     4) After the computer or user has played the hand, repeat from step 1
 
     wordList: list (string)
-    """
-    # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
+    """       
+    def uOrComputer(hand, wordList):
+        while True:
+            uc = input("Enter u to have yourself play, c to have the computer play: ")
+            if uc is 'u':
+                return playHand(hand, wordList, HAND_SIZE)
+            elif uc is 'c':
+                return compPlayHand(hand, wordList, HAND_SIZE)
+            else:
+                print("Invalid command.")
+            
+    storedHand = {}
+    while True:
+        play = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+        if play is 'e':
+            break
+        if play is 'n':
+            hand = dealHand(HAND_SIZE)
+            storedHand = hand
+            uOrComputer(hand, wordList)
+        elif play is 'r':
+            if not storedHand:
+                print("You have not played a hand yet. Please play a new hand first!")
+            else:
+                uOrComputer(storedHand, wordList)
+        else:
+            print("Invalid command.")
 
         
 #
@@ -134,5 +174,37 @@ def playGame(wordList):
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
-
-
+    
+    
+#storedHand = {}
+#    while True:
+#        play = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+#        if play is 'e':
+#            break
+#        if play is 'r':
+#            if (not storedHand):
+#                print("You have not played a hand yet. Please play a new hand first!")
+#                continue
+#            else:
+#                hand = storedHand
+#        if play is not 'n':
+#            print("Invalid command.")
+#            continue
+#        else:
+#            hand = dealHand(HAND_SIZE)
+#            storedHand = hand
+#        
+#        while True:
+#            uc = input("Enter u to have yourself play, c to have the computer play: ")
+#            if uc not in ['u','c']:
+#                print("Invalid command.")
+#                continue
+#            
+#            if uc is 'u':    
+#                return playHand(hand, wordList, HAND_SIZE)
+#            else:
+#                return compPlayHand(hand, wordList, HAND_SIZE)
+    
+    
+    
+    
