@@ -9,6 +9,9 @@ class UG(MITPerson):
 class Grad(MITPerson):
     pass
 
+class TransferStudent(MITPerson):
+    pass
+
 def isStudent(obj):
     return isinstance(obj,UG) or isinstance(obj,Grad)
 
@@ -18,5 +21,10 @@ s2 = UG('Ben Affleck', 2017)
 s3 = UG('Arash Ferdowsi', 2018)
 s4 = Grad('Drew Houston')
 s5 = UG('Mark Zuckerberg', 2019)
+
+print(s1)
+print(s1.getClass())
+print(s1.speak('where is the quiz?'))
+print(s2.speak('I have no clue!'))
 
 studentList = [s1, s2, s3, s5, s4]

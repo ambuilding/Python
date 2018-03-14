@@ -68,6 +68,15 @@ class Hand(object):
             for j in range(self.hand[letter]):
                 output += letter
         return output
+    # a more concise version
+    # def __str__(self):
+    #     '''
+    #     Display a string representation of the hand.
+    #     '''
+    #     output = ''
+    #     for letter in sorted(self.hand.keys()):
+    #         output += letter * self.hand[letter]
+    #     return output
 
     def update(self, word):
         """
@@ -82,8 +91,16 @@ class Hand(object):
         word: string
         returns: Boolean (if the word was or was not made)
         """
-        # Your code here
         new_hand = self.hand.copy()
+
+        # for letter in word:
+        #     try:
+        #         new_hand[letter] -= 1
+        #         if new_hand[letter] == 0:
+        #             del(new_hand[letter])
+        #     except KeyError:
+        #         # if 'letter' isn't in the hand, we can't make the word from this hand.
+        #         return False
 
         for letter in word:
             try:
@@ -91,7 +108,6 @@ class Hand(object):
             except KeyError:
                 # if 'letter' isn't in the hand, we can't make the word from this hand.
                 return False
-
         for letter in new_hand.keys():
             # If any of the letter counts of the new hand are less than zero after the
             # update, then we can't make the word from this hand.
@@ -101,9 +117,6 @@ class Hand(object):
         # Set self.hand to the new, updated hand and return True.
         self.hand = new_hand
         return True
-
-        # raise NotImplementedError()
-
 
 myHand = Hand(7)
 print(myHand)
@@ -115,3 +128,28 @@ print(myHand.calculateLen())
 
 myHand.update('za')
 print(myHand)
+
+myHand = Hand(11)
+myHand.setDummyHand('akkaokadksy')
+myHand.update(daikon): False
+print myHand
+aaadkkkkosy
+
+myHand = Hand(10)
+myHand.setDummyHand('ppaapinqyb')
+myHand.update(apple): False
+print myHand
+aabinpppqy
+
+myHand = Hand(9)
+myHand.setDummyHand('rarpzmkza')
+myHand.update(pear): False
+print myHand
+aakmprrzz
+
+myHand = Hand(9)
+myHand.setDummyHand('ohhoyyjrj')
+myHand.update(shoe): False
+print myHand
+hhjjooryy
+

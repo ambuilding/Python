@@ -33,8 +33,6 @@ class intSet(object):
     def __len__(self):
         return len(self.vals)
 
-
-
 s = intSet()
 print(s)
 s.insert(3)

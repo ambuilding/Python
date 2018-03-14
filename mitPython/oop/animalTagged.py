@@ -57,9 +57,6 @@ class Rabbit(Animal):
         return parents_same or parents_opposite
 
 
-
-
-
 peter = Rabbit(2)
 peter.set_name('Peter')
 hopsy = Rabbit(3)
@@ -71,7 +68,3 @@ print(cotton)
 mopsy = peter + hopsy
 mopsy.set_name('Mopsy')
 print(mopsy == cotton)
-
-
-
-

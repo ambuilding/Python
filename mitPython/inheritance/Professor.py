@@ -12,4 +12,7 @@ class Professor(MITPerson):
 
 
 faculty = Professor('Doctor Arrogant', 'six')
-
+print(m1.speak('hi there'))
+print(s1.speak('hi there'))
+print(faculty.speak('hi there'))
+print(faculty.lecture('hi there'))

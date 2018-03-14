@@ -16,5 +16,9 @@ class Coordinate(object):
 
 
 c = Coordinate(3,4)
+print(c) # str
 origin = Coordinate(0,0)
-c.distance(origin)
+print(c.x)
+print(c.y)
+print(c.distance(origin))
+print(Coordinate.distance(c, origin))

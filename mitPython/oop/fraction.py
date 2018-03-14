@@ -32,6 +32,9 @@ twoThirds = fraction(2, 3)
 print(oneHalf)
 print(twoThirds)
 
+oneHalf.getNumer()
+fraction.getDenom(twoThirds)
+
 new = oneHalf + twoThirds
 print(new)
 

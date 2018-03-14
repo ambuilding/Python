@@ -112,6 +112,3 @@ john = Person('John', 55)
 eric.age_diff(john)
 #
 fred = Student('Fred', 18, 'Course VI')
-
-
-

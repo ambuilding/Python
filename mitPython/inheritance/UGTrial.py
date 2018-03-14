@@ -11,6 +11,7 @@ class UG(Student):
 
     def speak(self, utterance):
         return MITPerson.speak(self, " Dude, " + utterance)
+        #return MITPerson.speak(self, " Yo Bro, " + utterance)
 
 class Grad(Student):
     pass

@@ -119,6 +119,42 @@
 
 - Give the computer the option to play, choose a Word, Play a Hand
 
+### Object Oriented Programming
+
+- each is an instance of an object, and every object has:
+  - a type
+  - an internal data representation (primitive or composite)
+  - a set of procedures for interaction with the object
+- each instance is a particular type of object
+
+- everything in Python is an object and has a type
+- objects are a data abstraction that capture:
+  - internal representation through data attributes
+  - interface for interacting with object through methods (procedures), defines behaviors but hides implementation
+- can create new instances of objects
+- can destroy objects
+  - explicitly using del or just “forget” about them
+  - Python system will reclaim destroyed or inaccessible objects – called “garbage collection”
+
+- The Power of OOP
+  - bundle together objects that share
+    - common attributes and
+    - procedures that operate on those attributes
+  - use abstraction to make a distinction between how to implement an object vs how to use the object
+  - build layers of object abstractions that inherit behaviors from other classes of objects
+  - create our own classes of objects on top of Python’s basic classes
+
+- update dict
+  - gets rid of the key letter in the attribute hand dictionary when the frequency of the letter falls to 0,
+  - leaves the key letter in the attribute hand dictionary even when the frequency of the letter falls to 0.
+
+- Modularity
+  - by isolating methods in classes, makes it easier to change behaviors
+
+- create class that includes instances of other classes within it
+
+##### Generators
+- any procedure or method with yield statement called a generator
 
 - Searching and sorting algorithms
   - linear search

@@ -36,9 +36,7 @@ class Grades(object):
         if not self.isSorted:
             self.students.sort()
             self.isSorted = True
-        #return self.students[:]
-        #return copy of list of students
-
+        #return self.students[:] #return copy of list of students
         # generator
         for s in self.students:
             yield s
@@ -85,9 +83,9 @@ six00.addGrade(ug1, 95)
 six00.addGrade(ug2, 85)
 six00.addGrade(ug3, 75)
 
-#print()
-#
-#print(gradeReport(six00))
+print()
+
+print(gradeReport(six00))
 
 six00.addGrade(g1, 90)
 six00.addGrade(g2, 45)
@@ -97,5 +95,4 @@ six00.addGrade(ug2, 75)
 print()
 
 print(gradeReport(six00))
-
 
