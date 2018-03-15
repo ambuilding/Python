@@ -1,33 +1,27 @@
-# -*- coding: utf-8 -*-
+#for k, v in num_word_dict.items():
+dict = {'a':1, 'b':5, 'c':5, 'd':2}
 
-def applyToEach(L, f):
-    """assumes L is a list, f a function
-       mutates L by replacing each element,
-       e, of L by f(e)"""
-    for i in range(len(L)):
-        L[i] = f(L[i])
+max_keys = [k for k, v in dict.items() if v == max(list(dict.values()))]
 
+# Get Key with maximum value in dictionary
+def getKeyWithMaxValue(aDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
 
-def applyFuns(L, x):
-    for f in L:
-         print(f(x))
+    returns: The key with the maximum values associated with it
+    '''
+    key = None
+    biggestValue = 0
+    for k in aDict:
+        if aDict[k] >= biggestValue:
+            key = k
+            biggestValue = aDict[key]
+    return (key, biggestValue)
 
-L = [1, -2, 3.4]
-applyToEach(L, abs)
-applyToEach(L, int)
-applyToEach(L, fact)
-applyToEach(L, fib)
+# operator lib
 
-applyFuns([abs, int, fact, fib], 4)
-
-# Generalization of hops
-for elt in map(abs, [1, -2, 3, -4]):
-	print(elt)
-
-L1 = [1, 28, 36]
-L2 = [2, 57, 9]
-for elt in map(min, L1, L2):
-	print(elt)
+max(dict, key=dict.get)
+max(dict, key=lambda i: dict[i])
 
 # dics operations
 grades = {'Ana':'B', 'John':'A+', 'Denise':'A', 'Katy':'A'}

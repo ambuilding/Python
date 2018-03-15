@@ -50,3 +50,33 @@ def oddTuples(aTup):
     # slicing by 2 to achieve the result
     return aTup[::2]
 
+# -*- coding: utf-8 -*-
+
+def applyToEach(L, f):
+    """assumes L is a list, f a function
+       mutates L by replacing each element,
+       e, of L by f(e)"""
+    for i in range(len(L)):
+        L[i] = f(L[i])
+
+
+def applyFuns(L, x):
+    for f in L:
+         print(f(x))
+
+L = [1, -2, 3.4]
+applyToEach(L, abs)
+applyToEach(L, int)
+applyToEach(L, fact)
+applyToEach(L, fib)
+
+applyFuns([abs, int, fact, fib], 4)
+
+# Generalization of hops
+for elt in map(abs, [1, -2, 3, -4]):
+    print(elt)
+
+L1 = [1, 28, 36]
+L2 = [2, 57, 9]
+for elt in map(min, L1, L2):
+    print(elt)

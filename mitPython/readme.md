@@ -156,6 +156,28 @@
 ##### Generators
 - any procedure or method with yield statement called a generator
 
+#### Encryption
+- Encryption - the process of obscuring or encoding messages to make them unreadable until they are decrypted
+- Decryption - making encrypted messages readable again by decoding them
+- Cipher - algorithm for performing encryption and decryption
+- Plaintext - the original message
+- Ciphertext - the encrypted message. Note: a ciphertext still contains all of the original message information, even if it looks like gibberish.
+
+##### Build the Shift Dictionary and Apply Shift
+- The Message class contains methods that could be used to apply a cipher to a string,
+- either to encrypt or to decrypt a message (since for Caesar codes this is the same action).
+
+##### PlaintextMessage
+- `PlaintextMessage` is a subclass of Message and has methods to encode a string using a specified shift value.
+- Our class will always create an encoded version of the message, and will have methods for changing the encoding.
+
+##### CiphertextMessage
+- Given an encrypted message, if you know the shift used to encode the message, decoding it is trivial.
+- If message is the encrypted message, and s is the shift used to encrypt the message,
+- then apply_shift(message, 26-s) gives you the original plaintext message.
+- tries each shift
+
+
 - Searching and sorting algorithms
   - linear search
   - bisection search

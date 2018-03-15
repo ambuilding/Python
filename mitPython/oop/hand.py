@@ -91,6 +91,7 @@ class Hand(object):
         word: string
         returns: Boolean (if the word was or was not made)
         """
+        # Has no side effects: does not modify self.hand.
         new_hand = self.hand.copy()
 
         # for letter in word:
