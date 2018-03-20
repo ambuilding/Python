@@ -2,6 +2,9 @@
 dict = {'a':1, 'b':5, 'c':5, 'd':2}
 
 max_keys = [k for k, v in dict.items() if v == max(list(dict.values()))]
+for k, v in dict.items():
+    if v == max(list(dict.values())):
+        print(k, v)
 
 # Get Key with maximum value in dictionary
 def getKeyWithMaxValue(aDict):
