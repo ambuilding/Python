@@ -31,10 +31,12 @@ def get_sector_sum():
         
     return sum
 
+
 def get_movers(file):
     movers = {}
 
     from bs4 import BeautifulSoup
+    
     with open(file) as fp:
         soup = BeautifulSoup(fp, "lxml")
 
@@ -56,33 +58,23 @@ def get_movers(file):
     except:
         return None
 
-def get_top_equity(movers, biggest):
-    for equity in movers:
-        if movers[equity] == biggest:
-            break
-        
-    return equity
 
 def get_biggest(sector):
     biggest_gainer = {}
     biggest_loser = {}
-
     file = sector + ".htm"
     movers = get_movers(file)
-    gainer_c = max(movers.values())
-    loser_c = min(movers.values())
+    
+    biggest_gainer["equity"] = max(movers, key=movers.get)
+    biggest_gainer["change"] = max(list(movers.values()))
 
-    biggest_gainer["equity"] = get_top_equity(movers, gainer_c)
-    biggest_gainer["change"] = gainer_c
-
-    biggest_loser["equity"] = get_top_equity(movers, loser_c)
-    biggest_loser["change"] = loser_c
+    biggest_gainer["equity"] = min(movers, key=movers.get)
+    biggest_loser["change"] = min(list(movers.values()))
 
     return [biggest_gainer, biggest_loser]
 
 
 def google_sector_report():
-
     import json
 
     results = {}
