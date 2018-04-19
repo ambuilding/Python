@@ -11,3 +11,8 @@
 
 
 - In Pandas, Create new columns just by adding a name to it.
+
+
+proxy_servers:
+    'http://180.162.200.161': 'http: socks5://127.0.0.1:1080'
+    'https://180.162.200.161': 'https: socks5://127.0.0.1:1080'
