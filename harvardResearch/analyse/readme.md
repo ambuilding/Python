@@ -9,21 +9,35 @@
   - signal transduction networks,
   - protein interaction networks, and much, much more.
 
+- Some basic concepts about networks
+- Write a Python function Generate very simple random graphs
+- Finally, analyze some basic properties of social networks collected in different rural villages in India.
+
 ### About
 - the basic components of networks and the graphs that represent them
   - such as neighbor, degree, path, component, and largest connected component.
-  - analyze some basic properties of social networks collected in different rural villages in India.
   - Network refers to the real world object, such as a road network,
   - whereas a graph refers to its abstract mathematical representation.
   - Any component is connected when considered on its own,
   - but there are no edges between the nodes that belong to different components.
 
-- Basic network concepts
-  - Graphs consist of `nodes`, also called `vertices`, and `links`, also called `edges`.
-  - Mathematically, a graph is a collection of vertices and edges where each edge corresponds to a pair of vertices.
-  - The `degree` of a vertex is the number of entries connected to it
-  - A `path` is a sequence of unique vertices
+##### Basic network concepts
+- Graphs consist of `nodes`, also called `vertices`, and `links`, also called `edges`.
+- Mathematically, a graph is a collection of vertices and edges where each edge corresponds to a pair of vertices.
+- When we visualize graphs, we typically draw vertices as circles and
+  - edges as lines connecting the circles.
+- The `degree` of a vertex is the number of entries connected to it
+- A `path` is a sequence of unique vertices,
+  - such that any two vertices in the sequence are connected by an edge.
+- The length of a path is defined as the number of edges in that path.
+- if there is a path from every vertex to every other vertex, connected.
+- If a graph is not connected, disconnected.
+- If a graph is disconnected, it breaks apart naturally into pieces, or components.
+  - Any component is connected when considered on its own,
+  - but there are no edges between the nodes that belong to different components.
+- the largest connected component, the one having the greatest number of nodes.
 
+#####  Basics of NetworkX
 - use the NetworkX module to create and manipulate network graphs
   - visualize a graph
   - `G.degree()` Networkx stores the degrees of nodes in a dictionary where
@@ -35,27 +49,39 @@
   - lowercase `p` is the probability for any pair of nodes to be connected by an edge.
   - writing our own ER function to better understand the model.
   - how to implement the coin flip just one time.
+    - Use the SciPy stats module, more specifically a function called Bernoulli.
     - The only input argument is p, which is the probability of success.
     - That means that p is the probability that we get an outcome 1 as opposed to outcome 0.
     - Because our graph is undirected, we should consider each pair of nodes just one time.
 
 - plot the degree distribution of a graph
+  - P of k, the probability of observing a node with that degree.
   - The majority of the nodes appear to have somewhere between perhaps 35 and 50 connections.
 
-#### Look at the basic properties of social networks in two villages in rural India
+#### Descriptive Statistics of Empirical Social Networks
+- Look at the basic properties of social networks in two villages in rural India
 - Compare the degree distribution of these empirical networks with the degree distribution of the ER networks
-- [Banerjee et al. 2013: The Diffusion of Microfinance](http://science.sciencemag.org/content/341/6144/1236498.full)
 
-- These data are part of a much larger dataset that was collected
-to study diffusion of micro-finance.
-- create networks for each village.
+##### Adjacency matrix
 - The structure of connections in a network can be captured in what is known as the Adjacency matrix of the network.
 - If we have n nodes, this is n by n matrix, where entry ij is one if node i and node j have a tie between them.(undirected)
+- Otherwise, that entry is equal to zero.
+
+- Consequently, the adjacency matrix is symmetric.
+- That means that the element ij is always the same as the element ji.
+- Either both are zero or both are equal to 1.
+
 - convert the adjacency matrices to graph objects.
 - To get a basic sense of the network size and number of connections,
   - count the number of nodes and the number of edges in the networks.
   - Each node has a total number of edges, its degree.
   - Calculate the mean degree for all nodes in the network.
+
+
+- [Banerjee et al. 2013: The Diffusion of Microfinance](http://science.sciencemag.org/content/341/6144/1236498.full)
+- These data are part of a much larger dataset that was collected
+to study diffusion of micro-finance.
+
 
 ```
 It seems that most people have relatively few connections,

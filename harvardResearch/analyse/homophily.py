@@ -1,5 +1,6 @@
 import numpy as np
 from collections import Counter
+
 def frequency(chars):
     frequencies     = dict(Counter(chars.values()))
     sum_frequencies = sum(frequencies.values())

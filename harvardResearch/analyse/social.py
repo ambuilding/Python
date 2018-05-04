@@ -1,17 +1,10 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-
-G = nx.karate_club_graph()
-nx.draw(G, with_labels=True, node_color="lightblue", edge_color="gray")
-plt.savefig("karate_graph.pdf")
-
-G.degree()
-
-# G.degree(0) is G.degree()[0]
-
 from scipy.stats import bernoulli
 
-#bernoulli.rvs(p=0.2)
+bernoulli.rvs(p=0.5)
+
+flip_coin_1000_times = sum([bernoulli.rvs(p=0.5) for t in range(1000)])
 
 # create empty graph
 # add all N nodes in the graph
@@ -63,8 +56,12 @@ G2 = nx.to_networkx_graph(A2)
 def basic_net_stats(G):
     print("Number of nodes: %d" % G.number_of_nodes())
     print("Number of edges: %d" % G.number_of_edges())
+    #np.mean(list(dict(G1.degree()).values()))
     degree_sequence = [d for n, d in G.degree()]
     print("Average degree: %.2f" % np.mean(degree_sequence))
+
+basic_net_stats(G1)
+basic_net_stats(G2)
     
 plot_degree_distribution(G1)
 plot_degree_distribution(G2)
@@ -72,6 +69,7 @@ plt.savefig("village_hist.pdf")
     
 
 #gen = nx.connected_component_subgraphs(G1)
+#g = gen.__next__()
 #g = gen.__next__()
 #len(gen.__next__())
 G1_LCC = max(nx.connected_component_subgraphs(G1), key=len)
@@ -87,7 +85,7 @@ plt.figure()
 nx.draw(G2_LCC, node_color="green", edge_color="gray", node_size=20)
 plt.savefig("village2.pdf")
     
-    
+
     
     
     
